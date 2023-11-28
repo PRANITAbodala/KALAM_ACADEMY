@@ -1,0 +1,108 @@
+/* Basic styles for the Friends Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+     background-size: cover;
+    background-color: rgba(16, 221, 221, 0.52);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    
+}
+
+h2 {
+    margin-top: 30px;
+    width: 250%;
+}
+
+ul {
+    list-style: circle;
+    padding: 10px;
+    margin: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    display: inline;
+    
+}
+
+input[type="submit"] {
+    height: 30px;
+    width: 70px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #d63333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="submit"]:hover {
+    background-color: #d63333;
+   
+}
+
+a {
+    text-decoration: black;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-left: 5px;
+    
+}
+
+
+section{
+    margin: 20px;
+    padding: 20px;
+    height: 250px;
+    position: relative;
+}
+
+.container{
+    position: absolute;
+    right: 20px;
+    top: 20px
+}
+
+.container1{
+    margin-top: 10px;
+}
+
+.txt{
+    padding: 15px;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.top_right{
+    position: relative;
+}
+
+.box{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.bottom_link{
+    position: relative;
+   
+}
+
+.link{
+    position: absolute;
+    top:100px;
+    left: 0px;
+}

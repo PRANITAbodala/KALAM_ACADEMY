@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="style.css">
+    <title>User Profile</title>
+    <!-- Your CSS and other meta tags -->
+</head>
+<body>
+    <nav >
+        <div class="top_right">
+            <!-- Logout button -->
+        <form method="post" action="page2.php">
+            <input type="submit" class="box" name="logout" value="Logout">
+        </form>
+        </div>
+        
+    </nav>
+    <h1>Welcome <?php echo $_SESSION['name']; ?></h1>
+    <section style="display: flex;">
+
+
+    <div class="container1" >
+        <!-- Display friend updates -->
+    <h2>Friend Updates</h2>
+    <ul>
+        <?php foreach ($friendUpdates as $update) : ?>
+            <li><?php echo $update['update_text']; ?></li>
+        <?php endforeach; ?>
+    </ul>
+    </div>
+
+
+    <div class="container"  >
+         <!-- Form to post new update -->
+    <h2>Post a New Update</h2>
+    <form method="post" action="page2.php">
+        <textarea class="txt" name="new_status" rows="3" cols="40" placeholder="Share your update"></textarea><br>
+        <input type="submit" value="Post">
+    </form>
+    </div>
+    </section>
+    
+
+   <section>
+    <div class="bottom_link">
+        <!-- Link to Friends page -->
+    <a href="page3.php" class="link"><b>Go to Friends Page</b></a>
+    </div>
+    
+   </section>
+
+</body>
+</html>

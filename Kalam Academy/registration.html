@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Login or Sign Up</title>
+
+    
+    <link rel="stylesheet" href="login-signin.css">
+
+    
+    <script>
+
+
+
+    function validateLoginForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Basic validation for username and password
+        if (username.length < 3 || password.length < 6) {
+            alert("Username must be at least 3 characters long, and password must be at least 6 characters long.");
+            return false; // Prevent form submission
+        }
+
+        return true; // Allow form submission
+    }
+
+    function validateSignupForm() {
+        var signupUsername = document.getElementById('signup-username').value;
+        var signupPassword = document.getElementById('signup-password').value;
+
+        // Basic validation for username and password during signup
+        if (signupUsername.length < 3 || signupPassword.length < 6) {
+            alert("Username must be at least 3 characters long, and password must be at least 6 characters long.");
+            return false; // Prevent form submission
+        }
+
+        return true; // Allow form submission
+    }
+
+
+
+
+
+
+        function toggleForm() {
+            var loginForm = document.getElementById('loginForm');
+            var signupForm = document.getElementById('signupForm');
+            var loginTitle = document.getElementById('loginTitle');
+            var signupTitle = document.getElementById('signupTitle');
+            var toggleLink = document.getElementById('toggleLink');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                loginTitle.style.display = 'block';
+                signupForm.style.display = 'none';
+                signupTitle.style.display = 'none';
+                toggleLink.innerHTML = 'Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a>';
+            } else {
+                loginForm.style.display = 'none';
+                loginTitle.style.display = 'none';
+                signupForm.style.display = 'block';
+                signupTitle.style.display = 'block';
+                toggleLink.innerHTML = 'Already have an account? <a href="#" onclick="toggleForm()">Login</a>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-holder">
+            <img src="user.png" class="logo" alt="">
+            <h2 id="loginTitle">LOGIN</h2>
+            <!-- <form action="login_or_register.php" class="form" method="post" id="loginForm"> -->
+            <form action="login_or_register.php" class="form" method="post" id="loginForm" onsubmit="return validateLoginForm()">
+                    
+                
+                <div class="form-group">
+                    <img src="user.png" alt="">
+                    <input type="text" placeholder="User name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <img src="lock.png" alt="">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="LOGIN" name="login">
+                </div>
+            </form>
+
+            <h2 id="signupTitle" style="display: none;">SIGN UP</h2>
+            <!-- <form action="login_or_register.php" class="form" method="post" id="signupForm" style="display: none;"> -->
+                <form action="login_or_register.php" class="form" method="post" id="signupForm" style="display: none;" onsubmit="return validateSignupForm()">
+                    
+               
+                
+                <div class="form-group">
+                    <img src="user.png" alt="">
+                    <input type="text" placeholder="User name" name="signup_name" required>
+                </div>
+                <div class="form-group">
+                    <img src="lock.png" alt="">
+                    <input type="password" placeholder="Password" name="signup_password" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="SIGN UP" name="signup">
+                </div>
+            </form>
+
+            <div class="form-group" id="toggleLink">
+                <span><a href="#" onclick="toggleForm()">Sign Up</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial text setup
+        document.getElementById('toggleLink').innerHTML = 'Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a>';
+    </script>
+</body>
+</html>
